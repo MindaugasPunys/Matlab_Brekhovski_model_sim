@@ -17,7 +17,7 @@ FixedNoise = 0; % load wave record from loadfile
 % 1 - use Temperature and Pressure
 global AirArguments;
 AirArguments = 0;
-TestCycles_New = 20;  % times to repeat aproximation
+TestCycles_New = 5;  % times to repeat aproximation
 
 %% CONSTANT VARIABLE DEFINITION
 
@@ -196,7 +196,6 @@ for m=1 : Num_Parame_Error_Levels
             Wave_Meas = Wave_Meas_WithoutNoise + Noise_Meas;
         end
 
-
         if (DrawFigures == 1)
             %% Plot modeled and reference signal
             figure(figure_num); figure_num = figure_num + 1;
@@ -215,7 +214,6 @@ for m=1 : Num_Parame_Error_Levels
         % FitBVDmodel = @(Get_parameter)  Model(Get_parameter, Dat_wo_tail, Refs, c1, ro1, Fs); % model description function
         Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
             Wave_Meas, acq_parameters_shifted(m,:), freq_axis); % model description function
-        
 
         if (DrawFigures == 1)
             %% Plot fitness function
@@ -227,12 +225,12 @@ for m=1 : Num_Parame_Error_Levels
             end
             plot(arg_range, Obj_func, '.k-');
             Obj_func_0 = Objective_Func(OriginalArgs, Reference, Wave_Meas, acquisition_parameters)
-            pause
+            pause(5)
         end
 
         FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
 
-        % Err=Objective_Func(FittedArgs,Reference,acquisition_parameters);
+        % Err = Objective_Func(FittedArgs,Reference,acquisition_parameters);
         % disp('Function fitting error');
         % disp(num2str(Err));
 

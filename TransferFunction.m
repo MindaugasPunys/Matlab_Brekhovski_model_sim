@@ -1,6 +1,5 @@
 function T = TransferFunction(args, params, freq)
 
-
 c1 = params(2);
 ro1 = params(3);
 
