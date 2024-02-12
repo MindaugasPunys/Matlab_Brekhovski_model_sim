@@ -208,7 +208,7 @@ for m=1 : Num_Parame_Error_Levels
             title('Measured');
             hold on
             xlabel('time, us');
-            pause(5);
+            pause(3);
         end
 
         % FitBVDmodel = @(Get_parameter)  Model(Get_parameter, Dat_wo_tail, Refs, c1, ro1, Fs); % model description function
@@ -219,13 +219,18 @@ for m=1 : Num_Parame_Error_Levels
             %% Plot fitness function
             figure(figure_num); figure_num = figure_num + 1;
 
-            arg_range = LB : (UB-LB)/100 : UB;
-            for i = 1 : length(arg_range)
-                Obj_func(i) = Objective_Func(arg_range(i), Reference, Wave_Meas, acquisition_parameters);
+            arg_range = zeros(3, 100); % Preallocate arg_range
+            for i = 1:length(LB)
+                arg_range(i, :) = linspace(LB(i), UB(i), 100);
             end
-            plot(arg_range, Obj_func, '.k-');
-            Obj_func_0 = Objective_Func(OriginalArgs, Reference, Wave_Meas, acquisition_parameters)
-            pause(5)
+            for i = 1 : length(arg_range)
+                Obj_func(i) = Objective_Func(arg_range(:,i), Reference, Wave_Meas, acquisition_parameters, freq_axis);
+            end
+            plot(Obj_func, '.k-');
+            grid on;
+            xlabel('Parameter value LB -> UB'); ylabel('Error');
+            Obj_func_0 = Objective_Func(OriginalArgs, Reference, Wave_Meas, acquisition_parameters, freq_axis);
+            pause(3)
         end
 
         FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
@@ -308,7 +313,7 @@ for m=1 : Num_Parame_Error_Levels
         figure(figure_num); figure_num = figure_num + 1;
         for j = 1 : length(TitleStrings)
             subplot(length(TitleStrings) / 2, 2, j)
-            plot(Args_Errors(:, j),'.b-');
+            plot(abs(Args_Errors(:, j)),'.b-');
             ylabel('Error, [%]');
             xlabel('Test num')
             title(['Error of ' TitleStrings{j}]);

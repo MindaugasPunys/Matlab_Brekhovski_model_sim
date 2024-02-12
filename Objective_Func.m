@@ -1,7 +1,6 @@
 function error = Objective_Func(args, ref_signal, meas_signal, params, f_axis)
 
-model_signal = Wave_synthesize(args, ref_signal, params, ...
-    f_axis);
+model_signal = Wave_synthesize(args, ref_signal, params, f_axis);
 
 % error = sum((model_signal(start_point : end_point) - meas_signal(start_point : end_point)) .^ 2) / ...
 %         sum(meas_signal(start_point : end_point) .^ 2);

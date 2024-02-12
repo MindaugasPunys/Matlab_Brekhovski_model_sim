@@ -1,0 +1,47 @@
+>> test_synthesized
+Test no. 1. Wave Approximation Error =4.8909 dB
+Strange record found. Total strange records 1
+Test no. 2. Wave Approximation Error =4.7589 dB
+Strange record found. Total strange records 2
+Test no. 3. Wave Approximation Error =2.4816 dB
+Strange record found. Total strange records 3
+Test no. 4. Wave Approximation Error =2.1849 dB
+Strange record found. Total strange records 4
+Test no. 5. Wave Approximation Error =1.3771 dB
+Strange record found. Total strange records 5
+============ m=1 ============================
+Median of Approximation Error=2.4816 dB
+Median of Approximation Error Noisy=2.4816 dB
+Percentage of strange records 100 %
+======================================================
+Test no. 1. Wave Approximation Error =-11.5905 dB
+Strange record found. Total strange records 1
+Test no. 2. Wave Approximation Error =-14.6579 dB
+Strange record found. Total strange records 2
+Test no. 3. Wave Approximation Error =-9.6342 dB
+Strange record found. Total strange records 3
+Test no. 4. Wave Approximation Error =-19.7779 dB
+Strange record found. Total strange records 4
+Test no. 5. Wave Approximation Error =-7.8457 dB
+Strange record found. Total strange records 5
+============ m=2 ============================
+Median of Approximation Error=-11.5905 dB
+Median of Approximation Error Noisy=-11.5905 dB
+Percentage of strange records 100 %
+======================================================
+Test no. 1. Wave Approximation Error =3.5369 dB
+Strange record found. Total strange records 1
+Test no. 2. Wave Approximation Error =2.9984 dB
+Strange record found. Total strange records 2
+Test no. 3. Wave Approximation Error =3.4777 dB
+Strange record found. Total strange records 3
+Test no. 4. Wave Approximation Error =2.3093 dB
+Strange record found. Total strange records 4
+Test no. 5. Wave Approximation Error =4.9186 dB
+Strange record found. Total strange records 5
+============ m=3 ============================
+Median of Approximation Error=3.4777 dB
+Median of Approximation Error Noisy=3.4777 dB
+Percentage of strange records 100 %
+======================================================
+>> 
