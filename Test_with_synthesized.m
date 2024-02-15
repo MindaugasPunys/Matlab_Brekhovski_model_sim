@@ -277,10 +277,11 @@ for m=1:Num_Parame_Error_Levels
 
 end  %for m=1:Num_Parame_Error_Levels
 
+%% 
 ParNo=2; % c1 parameter number 2
 ArgNo=6; % 6 - h parameter
 %stdMedian_c1_Errors(m,:)=std(MedianArgs_Errors(:,ArgNo));
-%%
+
 figure
 p1(1)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
 hold on

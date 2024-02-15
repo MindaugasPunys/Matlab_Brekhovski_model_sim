@@ -5,7 +5,7 @@ clear; close all;
 
 SaveToFile = 0;
 
-DrawFigures = 1;
+DrawFigures = 1; % 0 - Off; 1 - On; 2 - Draw each iteration results
 figure_num = 1;
 
 savefile = ''; % ''
@@ -176,6 +176,7 @@ for m=1 : Num_Parame_Error_Levels
         (1 + acquisition_parameters_error(:,m)' / 100);
 
     if (FixedNoise == 1)
+        %% Load fixed noise file
         load(loadfile);
         Noise_Meas = StrangeRecordsNoise(1).record; % take first strange record for analysis
         Wave_Meas = StrangeRecordsWave(1).record; % take first strange record for analysis
@@ -196,7 +197,7 @@ for m=1 : Num_Parame_Error_Levels
             Wave_Meas = Wave_Meas_WithoutNoise + Noise_Meas;
         end
 
-        if (DrawFigures == 1)
+        if (DrawFigures == 2)
             %% Plot modeled and reference signal
             figure(figure_num); figure_num = figure_num + 1;
 
@@ -208,14 +209,13 @@ for m=1 : Num_Parame_Error_Levels
             title('Measured');
             hold on
             xlabel('time, us');
-            pause(3);
         end
 
         % FitBVDmodel = @(Get_parameter)  Model(Get_parameter, Dat_wo_tail, Refs, c1, ro1, Fs); % model description function
         Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
             Wave_Meas, acq_parameters_shifted(m,:), freq_axis); % model description function
 
-        if (DrawFigures == 1)
+        if (DrawFigures == 2)
             %% Plot fitness function
             figure(figure_num); figure_num = figure_num + 1;
 
@@ -230,7 +230,6 @@ for m=1 : Num_Parame_Error_Levels
             grid on;
             xlabel('Parameter value LB -> UB'); ylabel('Error');
             Obj_func_0 = Objective_Func(OriginalArgs, Reference, Wave_Meas, acquisition_parameters, freq_axis);
-            pause(3)
         end
 
         FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
@@ -324,12 +323,83 @@ for m=1 : Num_Parame_Error_Levels
 
 end  %for m=1:Num_Parame_Error_Levels
 
-ParNo = 2; % c1 parameter number 2
-ArgNo = 6; % 6 - h parameter
-%stdMedian_c1_Errors(m,:)=std(MedianArgs_Errors(:,ArgNo));
 
+%% PLOT FINAL RESULTS
 
+if (DrawFigures == 1)
+    %% Plot c1 and h relationship
+    figure(figure_num); figure_num = figure_num + 1;
 
+    ParNo = 2; % c1 parameter number 2
+    ArgNo = 6; % 6 - h parameter
+    %stdMedian_c1_Errors(m,:)=std(MedianArgs_Errors(:,ArgNo));
 
+    p1(1)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
+    hold on
+    p1(2)=plot(acq_parameters_shifted(:,ParNo)',MeanArgs_Errors(:,ArgNo)','*m-');
+    p1(3)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)'-2*stdArgs_Errors(:,ArgNo)','.r--');
+    p1(4)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)'+2*stdArgs_Errors(:,ArgNo)','.r--');
+    xlabel('c1, m/s'); ylabel('Error h, %');
+    legend(p1,'Median','Mean','Median-2std','Median+2std');
+    grid
 
+    plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
+    xlabel('c1, m/s'); ylabel('Median (Error h), %');
+    title('Median')
+    grid
+end
 
+if (DrawFigures == 1)
+    %% Plot ro2 and h relationship
+    figure(figure_num); figure_num = figure_num + 1;
+
+    ArgNo=5; % ro2 - h parameter
+    %stdMedian_c1_Errors(m,:)=std(MedianArgs_Errors(:,ArgNo));
+
+    figure
+    p1(1)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
+    hold on
+    p1(2)=plot(acq_parameters_shifted(:,ParNo)',MeanArgs_Errors(:,ArgNo)','*m-');
+    p1(3)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)'-2*stdArgs_Errors(:,ArgNo)','.r--');
+    p1(4)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)'+2*stdArgs_Errors(:,ArgNo)','.r--');
+    xlabel('c1, m/s');
+    ylabel('Error ro2, %');
+    legend(p1,'Median','Mean','Median-2std','Median+2std');
+    grid
+
+    figure
+    plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
+    xlabel('c1, m/s');
+    ylabel('Median (Error ro2), %');
+    title('Median')
+    grid
+end
+
+if (DrawFigures == 1)
+    %% Plot v_sluoksnio and h relationship
+    figure(figure_num); figure_num = figure_num + 1;
+
+    ArgNo=3; % V_sluoksnio - h parameter
+    %stdMedian_c1_Errors(m,:)=std(MedianArgs_Errors(:,ArgNo));
+
+    figure
+    p1(1)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
+    hold on
+    p1(2)=plot(acq_parameters_shifted(:,ParNo)',MeanArgs_Errors(:,ArgNo)','*m-');
+    p1(3)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)'-2*stdArgs_Errors(:,ArgNo)','.r--');
+    p1(4)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)'+2*stdArgs_Errors(:,ArgNo)','.r--');
+    xlabel('c1, m/s');
+    ylabel('Error c2, %');
+    legend(p1,'Median','Mean','Median-2std','Median+2std');
+    grid
+
+    figure
+    plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
+    xlabel('c1, m/s');
+    ylabel('Median (Error c2), %');
+    title('Median')
+    grid
+
+    telapsed_cpu = toc(tstart_cpu);
+    disp(['Simulation duration: ' num2str(telapsed_cpu/60) ' minutes']);
+end
