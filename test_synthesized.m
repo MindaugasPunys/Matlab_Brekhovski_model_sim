@@ -1,13 +1,10 @@
 %% SETUP
 clear; close all;
 
-%% CONFIGURATION
-
-SaveToFile = 0;
-
 DrawFigures = 1; % 0 - Off; 1 - On; 2 - Draw each iteration results
 figure_num = 1;
 
+SaveToFile = 0;
 savefile = ''; % ''
 loadfile = ''; % ''
 
@@ -19,9 +16,12 @@ global AirArguments;
 AirArguments = 0;
 TestCycles_New = 5;  % times to repeat aproximation
 
-%% CONSTANT VARIABLE DEFINITION
-
+%% REFRENCE
+% Generates a refrence chirp signal
 N_points = 1024 * 2;
+F_sampling = 10e6;
+T_sampling = 1 / F_sampling;
+Magnitude = 1000;
 
 % https://en.wikipedia.org/wiki/Speed_of_sound
 % Temperature = 20; % [degC]
@@ -30,12 +30,6 @@ N_points = 1024 * 2;
 % gama = 1.4; % Air adiabatic constant
 % Ks = gama * Pressure; % Coefficient of stiffness
 % ro1 = Ks / (c1^2);
-
-F_sampling = 10e6;
-T_sampling = 1 / F_sampling;
-Magnitude = 1000;
-
-%% EXCITATION CHIRP SIGNAL GENERATION
 
 F1_chirp = 0.3e6;  % 0.3 MHz
 F2_chirp = 0.95e6;  % 0.95 MHz
@@ -62,7 +56,7 @@ if (DrawFigures == 1)
 end
 
 
-%% SIGNAL PARAMETERS
+%% MODEL PARAMETERS
 
 % Synthesized Measured signal
 alfa0 = 18.382; % attenuation coefficient
@@ -166,7 +160,6 @@ options = optimoptions('particleswarm', 'SwarmSize', 200, ...
 %     'Display', 'off', 'FunctionTolerance', 1e-8);
 
 %% FITTING PROCESS
-
 tstart_cpu = tic;
 
 for m=1 : Num_Parame_Error_Levels
@@ -192,6 +185,7 @@ for m=1 : Num_Parame_Error_Levels
         %% PSO fitting
 
         if (FixedNoise ~= 1)
+            %% Add noise
             Noise_Meas = (en * Gain * sqrt(F_sampling)) * ...
                 randn(size(Wave_Meas_WithoutNoise));
             Wave_Meas = Wave_Meas_WithoutNoise + Noise_Meas;
@@ -262,11 +256,16 @@ for m=1 : Num_Parame_Error_Levels
             disp(['Strange record found. Total strange records ' num2str(length(StrangeRecordsNoise))]);
         end
 
-        % figure
-        % p(1)=plot(time,Wave_Meas,'b');grid;
-        % hold on
-        % p(2)=plot(time,Wave_Fitted,'r');grid;
-        % legend(p,['Measured';'Fitted  ']);
+        if (DrawFigures == 1)
+            %% Plot fitness function
+            figure(figure_num); figure_num = figure_num + 1;
+
+            p(1)=plot(time,Wave_Meas,'b');grid;
+            hold on
+            p(2)=plot(time,Wave_Fitted,'r');grid;
+            legend(p,['Measured';'Fitted  ']);
+        end
+
 
     end  %  for k=1:TestCycles
 
@@ -323,7 +322,6 @@ for m=1 : Num_Parame_Error_Levels
 
 end  %for m=1:Num_Parame_Error_Levels
 
-
 %% PLOT FINAL RESULTS
 
 if (DrawFigures == 1)
@@ -347,16 +345,13 @@ if (DrawFigures == 1)
     xlabel('c1, m/s'); ylabel('Median (Error h), %');
     title('Median')
     grid
-end
 
-if (DrawFigures == 1)
     %% Plot ro2 and h relationship
     figure(figure_num); figure_num = figure_num + 1;
 
     ArgNo=5; % ro2 - h parameter
     %stdMedian_c1_Errors(m,:)=std(MedianArgs_Errors(:,ArgNo));
 
-    figure
     p1(1)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
     hold on
     p1(2)=plot(acq_parameters_shifted(:,ParNo)',MeanArgs_Errors(:,ArgNo)','*m-');
@@ -367,22 +362,17 @@ if (DrawFigures == 1)
     legend(p1,'Median','Mean','Median-2std','Median+2std');
     grid
 
-    figure
     plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
     xlabel('c1, m/s');
     ylabel('Median (Error ro2), %');
     title('Median')
     grid
-end
-
-if (DrawFigures == 1)
     %% Plot v_sluoksnio and h relationship
     figure(figure_num); figure_num = figure_num + 1;
 
     ArgNo=3; % V_sluoksnio - h parameter
     %stdMedian_c1_Errors(m,:)=std(MedianArgs_Errors(:,ArgNo));
 
-    figure
     p1(1)=plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
     hold on
     p1(2)=plot(acq_parameters_shifted(:,ParNo)',MeanArgs_Errors(:,ArgNo)','*m-');
@@ -393,7 +383,6 @@ if (DrawFigures == 1)
     legend(p1,'Median','Mean','Median-2std','Median+2std');
     grid
 
-    figure
     plot(acq_parameters_shifted(:,ParNo)',MedianArgs_Errors(:,ArgNo)','or-');
     xlabel('c1, m/s');
     ylabel('Median (Error c2), %');
@@ -403,3 +392,9 @@ if (DrawFigures == 1)
     telapsed_cpu = toc(tstart_cpu);
     disp(['Simulation duration: ' num2str(telapsed_cpu/60) ' minutes']);
 end
+
+
+
+
+
+
