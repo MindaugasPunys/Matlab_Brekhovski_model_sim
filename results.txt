@@ -44,4 +44,24 @@ Median of Approximation Error=3.4777 dB
 Median of Approximation Error Noisy=3.4777 dB
 Percentage of strange records 100 %
 ======================================================
->> 
+>> {Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Wave_synthesize')" style="font-weight:bold">Wave_synthesize</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Objective_Func', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m', 3)" style="font-weight:bold">Objective_Func</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m',3,0)">line 3</a>)
+model_signal = Wave_synthesize(args, ref_signal, params, f_axis);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 212)" style="font-weight:bold">test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',212,0)">line 212</a>)
+        Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fcnvectorizer', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m', 19)" style="font-weight:bold">fcnvectorizer</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m',19,0)">line 19</a>)
+            y(i,:) = feval(fun,(pop(i,:)));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm>pswcore', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 375)" style="font-weight:bold">particleswarm>pswcore</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',375,0)">line 375</a>)
+            state.Fvals = fcnvectorizer(state.Positions, objFcn, 1, options.SerialUserFcn);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 157)" style="font-weight:bold">particleswarm</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',157,0)">line 157</a>)
+[x,fval,exitFlag,output] = pswcore(objFcn,nvars,lbRow,ubRow,output,options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 232)" style="font-weight:bold">test_synthesized</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',232,0)">line 232</a>)
+        FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
+} 

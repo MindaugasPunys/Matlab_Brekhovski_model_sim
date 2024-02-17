@@ -8,6 +8,9 @@ SaveToFile = 0;
 savefile = ''; % ''
 loadfile = ''; % ''
 
+cmd_window_output = 'results.txt';
+diary(cmd_window_output);
+
 FixedNoise = 0; % load wave record from loadfile
 
 % 0 - use c1 and ro1
@@ -45,7 +48,7 @@ XducF2 = F2_chirp;
 [Reference, time] = Excitation_Chirp(F1_chirp, F2_chirp, T_chirp, T_StartShift, ...
     Magnitude, XducF1, XducF2, T_sampling, T_All);
 
-if (DrawFigures == 1)
+if (DrawFigures >= 1)
     %% Plot the generated signal
     figure(figure_num); figure_num = figure_num + 1;
 
@@ -80,16 +83,16 @@ if (AirArguments == 1)
     Ks = gama * Pressure; % Coefficient of stiffness
     ro1 = Ks / (c1^2);
 
-    OriginalArgs = [alfa0, freq0, V_sluoksnio, n, ro2, h, Temperature, Pressure];
-    LB_coeff = -[50, 99, 50, 50, 50, 99, 50, 20]; % [%]
-    UB_coeff = [50, 100, 50, 50, 50, 100, 50, 20]; % [%]
+    OriginalArgs = [alfa0, freq0, V_sluoksnio, n, ro2, h];
+    LB_coeff = -[50, 99, 50, 50, 50, 99]; % [%]
+    UB_coeff = [50, 100, 50, 50, 50, 100]; % [%]
     acquisition_parameters = [F_sampling, c1, ro1];
     acquisition_parameters_error = 0; % [%]
     e_c1 = 0;
 else
     %% AirArguments == 0; use c1 and ro1 model
 
-    c1 = 344; % First media ultrasound velocity (Air)
+    c1 = 343; % First media ultrasound velocity (Air)
     ro1 = 1.2; % First media density (Air)  kg/m^3
 
     OriginalArgs = [alfa0, freq0, V_sluoksnio, n, ro2, h];
@@ -121,11 +124,11 @@ freq_axis(HalfXcorrLength+2 : nfft) = F_sampling / nfft * nr;
 Wave_Meas_WithoutNoise = Wave_synthesize(OriginalArgs, Reference, acquisition_parameters, freq_axis);
 
 
-if (DrawFigures == 1)
+if (DrawFigures >= 1)
     %% Plot the generated ultrasound wave
     figure(figure_num); figure_num = figure_num + 1;
-
     plot(Wave_Meas_WithoutNoise,'r');
+    title('Refrence signal without noise');
     grid
 end
 
@@ -191,7 +194,7 @@ for m=1 : Num_Parame_Error_Levels
             Wave_Meas = Wave_Meas_WithoutNoise + Noise_Meas;
         end
 
-        if (DrawFigures == 2)
+        if (DrawFigures >= 2)
             %% Plot modeled and reference signal
             figure(figure_num); figure_num = figure_num + 1;
 
@@ -209,7 +212,7 @@ for m=1 : Num_Parame_Error_Levels
         Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
             Wave_Meas, acq_parameters_shifted(m,:), freq_axis); % model description function
 
-        if (DrawFigures == 2)
+        if (DrawFigures >= 2)
             %% Plot fitness function
             figure(figure_num); figure_num = figure_num + 1;
 
@@ -256,7 +259,7 @@ for m=1 : Num_Parame_Error_Levels
             disp(['Strange record found. Total strange records ' num2str(length(StrangeRecordsNoise))]);
         end
 
-        if (DrawFigures == 1)
+        if (DrawFigures >= 1)
             %% Plot fitness function
             figure(figure_num); figure_num = figure_num + 1;
 
@@ -291,7 +294,7 @@ for m=1 : Num_Parame_Error_Levels
     %load('Test_30nV.mat');
     %load('Test_0nV.mat');
 
-    if (DrawFigures == 1)
+    if (DrawFigures >= 1)
         %% Plot measured errors
         figure(figure_num); figure_num = figure_num + 1;
         pl(1) = plot(WaveApproximError(:,m), '.k-');
@@ -302,13 +305,8 @@ for m=1 : Num_Parame_Error_Levels
         xlabel('Test number')
         grid on;
 
-        if (AirArguments == 1)
-            TitleStrings={'alfa0', 'freq0', 'c2', 'n', 'ro2', 'h', 'T', 'P'};
-        else
-            TitleStrings={'alfa0', 'freq0', 'c2', 'n', 'ro2', 'h'};
-        end
-
         figure(figure_num); figure_num = figure_num + 1;
+        TitleStrings={'alfa0', 'freq0', 'c2', 'n', 'ro2', 'h'};
         for j = 1 : length(TitleStrings)
             subplot(length(TitleStrings) / 2, 2, j)
             plot(abs(Args_Errors(:, j)),'.b-');
@@ -318,13 +316,13 @@ for m=1 : Num_Parame_Error_Levels
             grid
         end % for j=1:length(TitleStrings)
 
-    end % if (DrawFigures1==1)
+    end
 
 end  %for m=1:Num_Parame_Error_Levels
 
 %% PLOT FINAL RESULTS
 
-if (DrawFigures == 1)
+if (DrawFigures >= 1)
     %% Plot c1 and h relationship
     figure(figure_num); figure_num = figure_num + 1;
 
@@ -392,9 +390,6 @@ if (DrawFigures == 1)
     telapsed_cpu = toc(tstart_cpu);
     disp(['Simulation duration: ' num2str(telapsed_cpu/60) ' minutes']);
 end
-
-
-
 
 
 
