@@ -8,8 +8,8 @@ SaveToFile = 0;
 savefile = ''; % ''
 loadfile = ''; % ''
 
-cmd_window_output = 'results.txt';
-diary(cmd_window_output);
+log_file = 'test_synthesized_results.txt';
+diary(log_file);
 
 FixedNoise = 0; % load wave record from loadfile
 
@@ -122,7 +122,6 @@ nr = (HalfXcorrLength+2 : nfft) - (nfft + 1);
 freq_axis(HalfXcorrLength+2 : nfft) = F_sampling / nfft * nr;
 
 Wave_Meas_WithoutNoise = Wave_synthesize(OriginalArgs, Reference, acquisition_parameters, freq_axis);
-
 
 if (DrawFigures >= 1)
     %% Plot the generated ultrasound wave
@@ -259,7 +258,7 @@ for m=1 : Num_Parame_Error_Levels
             disp(['Strange record found. Total strange records ' num2str(length(StrangeRecordsNoise))]);
         end
 
-        if (DrawFigures >= 1)
+        if (DrawFigures >= 2)
             %% Plot fitness function
             figure(figure_num); figure_num = figure_num + 1;
 

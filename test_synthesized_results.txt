@@ -1,0 +1,116 @@
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+test_synthesized
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Response_Spectrum')" style="font-weight:bold">Response_Spectrum</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Wave_synthesize', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m', 3)" style="font-weight:bold">Wave_synthesize</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m',3,0)">line 3</a>)
+RespSpectrum = Response_Spectrum(args, input_signal_param, params, freq);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Objective_Func', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m', 3)" style="font-weight:bold">Objective_Func</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m',3,0)">line 3</a>)
+model_signal = Wave_synthesize(args, ref_signal, params, f_axis);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 211)" style="font-weight:bold">test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',211,0)">line 211</a>)
+        Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fcnvectorizer', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m', 19)" style="font-weight:bold">fcnvectorizer</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m',19,0)">line 19</a>)
+            y(i,:) = feval(fun,(pop(i,:)));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm>pswcore', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 375)" style="font-weight:bold">particleswarm>pswcore</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',375,0)">line 375</a>)
+            state.Fvals = fcnvectorizer(state.Positions, objFcn, 1, options.SerialUserFcn);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 157)" style="font-weight:bold">particleswarm</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',157,0)">line 157</a>)
+[x,fval,exitFlag,output] = pswcore(objFcn,nvars,lbRow,ubRow,output,options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 231)" style="font-weight:bold">test_synthesized</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',231,0)">line 231</a>)
+        FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
+} 
+clc
+test_synthesized
+if system_dependent('IsDebugMode')==1, dbquit; end
+test_synthesized
+if system_dependent('IsDebugMode')==1, dbquit; end
+test_synthesized
+if system_dependent('IsDebugMode')==1, dbquit; end
+test_synthesized
+if system_dependent('IsDebugMode')==1, dbcont; end
+Test no. 1. Wave Approximation Error =-20.1202 dB
+Strange record found. Total strange records 1
+Test no. 2. Wave Approximation Error =-20.1201 dB
+Strange record found. Total strange records 2
+Test no. 3. Wave Approximation Error =-20.1201 dB
+Strange record found. Total strange records 3
+Test no. 4. Wave Approximation Error =-20.1203 dB
+Strange record found. Total strange records 4
+Test no. 5. Wave Approximation Error =-20.1201 dB
+Strange record found. Total strange records 5
+============ m=1 ============================
+Median of Approximation Error=-20.1201 dB
+Median of Approximation Error Noisy=-20.1201 dB
+Percentage of strange records 100 %
+======================================================
+Test no. 1. Wave Approximation Error =-200.2595 dB
+Test no. 2. Wave Approximation Error =-121.5166 dB
+Test no. 3. Wave Approximation Error =-286.4584 dB
+Test no. 4. Wave Approximation Error =-173.8377 dB
+Test no. 5. Wave Approximation Error =-223.3821 dB
+============ m=2 ============================
+Median of Approximation Error=-200.2595 dB
+Median of Approximation Error Noisy=-200.2595 dB
+Percentage of strange records 0 %
+======================================================
+Test no. 1. Wave Approximation Error =-20.6244 dB
+Strange record found. Total strange records 1
+Test no. 2. Wave Approximation Error =-20.6242 dB
+Strange record found. Total strange records 2
+Test no. 3. Wave Approximation Error =-20.6243 dB
+Strange record found. Total strange records 3
+Test no. 4. Wave Approximation Error =-20.6243 dB
+Strange record found. Total strange records 4
+Test no. 5. Wave Approximation Error =-20.6243 dB
+Strange record found. Total strange records 5
+============ m=3 ============================
+Median of Approximation Error=-20.6243 dB
+Median of Approximation Error Noisy=-20.6243 dB
+Percentage of strange records 100 %
+======================================================
+Simulation duration: 3.2883 minutes
+clc
+test_synthesized
+if system_dependent('IsDebugMode')==1, dbquit; end
+test_synthesized
+Test no. 1. Wave Approximation Error =-20.1202 dB
+Strange record found. Total strange records 1
+Test no. 2. Wave Approximation Error =-20.1188 dB
+Strange record found. Total strange records 2
+Test no. 3. Wave Approximation Error =-20.1202 dB
+Strange record found. Total strange records 3
+Test no. 4. Wave Approximation Error =-20.0028 dB
+Strange record found. Total strange records 4
+Test no. 5. Wave Approximation Error =-20.1192 dB
+Strange record found. Total strange records 5
+============ m=1 ============================
+Median of Approximation Error=-20.1192 dB
+Median of Approximation Error Noisy=-20.1192 dB
+Percentage of strange records 100 %
+======================================================
+Test no. 1. Wave Approximation Error =-255.9511 dB
+Test no. 2. Wave Approximation Error =-268.2567 dB
+Test no. 3. Wave Approximation Error =-226.9882 dB
+Test no. 4. Wave Approximation Error =-213.7017 dB
+Test no. 5. Wave Approximation Error =-2.7911 dB
+Strange record found. Total strange records 1
+============ m=2 ============================
+Median of Approximation Error=-226.9882 dB
+Median of Approximation Error Noisy=-226.9882 dB
+Percentage of strange records 20 %
+======================================================
+Test no. 1. Wave Approximation Error =-20.6243 dB
+Strange record found. Total strange records 1
+Test no. 2. Wave Approximation Error =-20.6244 dB
+Strange record found. Total strange records 2
+Test no. 3. Wave Approximation Error =-20.6243 dB
+Strange record found. Total strange records 3
+Test no. 4. Wave Approximation Error =-20.6243 dB
+Strange record found. Total strange records 4
