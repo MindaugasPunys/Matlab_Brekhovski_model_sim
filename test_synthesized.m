@@ -14,9 +14,9 @@ diary(log_file);
 FixedNoise = 0; % load wave record from loadfile
 
 % 0 - use c1 and ro1
-% 1 - use Temperature and Pressure
+% 1 - use Temperature and Pressure (Better results)
 global AirArguments;
-AirArguments = 0;
+AirArguments = 1;
 TestCycles_New = 5;  % times to repeat aproximation
 
 %% REFRENCE

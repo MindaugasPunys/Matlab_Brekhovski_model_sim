@@ -8,9 +8,13 @@ SaveToFile = 0;
 savefile = ''; % ''
 loadfile = ''; % ''
 
+FixedNoise = 0; % load wave record from loadfile
+
 % 0 - use c1 and ro1
-% 1 - use Temperature and Pressure
-model_type = 0;
+% 1 - use Temperature and Pressure (Better results)
+global AirArguments;
+AirArguments = 1;
+TestCycles_New = 5;  % times to repeat aproximation
 
 %% REFRENCE
 % Generates a refrence chirp signal
@@ -41,7 +45,7 @@ XducF2 = F2_chirp;
 [Reference, time] = Excitation_Chirp(F1_chirp, F2_chirp, T_chirp, T_StartShift, ...
     Magnitude, XducF1, XducF2, T_sampling, T_All);
 
-if (DrawFigures == 1)
+if (DrawFigures >= 1)
     %% Plot the generated signal
     figure(figure_num); figure_num = figure_num + 1;
 
@@ -50,6 +54,7 @@ if (DrawFigures == 1)
     ylabel('Amplitude');
     title('Chirp Excitation Signal');
 end
+
 
 %% MODEL PARAMETERS
 
@@ -61,10 +66,30 @@ n = 1.9; % Exponentiation number of attenuations
 ro2 = 1124; % Layer density
 h = 0.001174; % Layer thickness
 
-if (model_type == 0)
+if (AirArguments == 1)
+    %% AirArguments == 1; use Temperature and Pressure model
+    Temp_n_c = 20;
+    Press_n_c = 101.325e3;
+    Press_min = 94e3;
+    Press_max = 105e3;
+    Temperature = 20; %[-20:10:40]
+    Pressure = Press_n_c;
+
+    c1 = 331.38 * sqrt(1 + Temperature / 273.15); % speed of sound
+    gama = 1.4; % Air adiabatic constant
+    Ks = gama * Pressure; % Coefficient of stiffness
+    ro1 = Ks / (c1^2);
+
+    OriginalArgs = [alfa0, freq0, V_sluoksnio, n, ro2, h];
+    LB_coeff = -[50, 99, 50, 50, 50, 99]; % [%]
+    UB_coeff = [50, 100, 50, 50, 50, 100]; % [%]
+    acquisition_parameters = [F_sampling, c1, ro1];
+    acquisition_parameters_error = 0; % [%]
+    e_c1 = 0;
+else
     %% AirArguments == 0; use c1 and ro1 model
 
-    c1 = 344; % First media ultrasound velocity (Air)
+    c1 = 343; % First media ultrasound velocity (Air)
     ro1 = 1.2; % First media density (Air)  kg/m^3
 
     OriginalArgs = [alfa0, freq0, V_sluoksnio, n, ro2, h];
@@ -79,30 +104,43 @@ if (model_type == 0)
         e_c1 / c1 * 100;
         e_ro1 / ro1 * 100]; % [%]
 end
-
-if (model_type == 1)
-    %% model_type == 1; use Temperature and Pressure model
-    Temp_n_c = 20;
-    Press_n_c = 101.325e3;
-    Press_min = 94e3;
-    Press_max = 105e3;
-    Temperature = 20; %[-20:10:40]
-    Pressure = Press_n_c;
-
-    c1 = 331.38 * sqrt(1 + Temperature / 273.15); % speed of sound
-    gama = 1.4; % Air adiabatic constant
-    Ks = gama * Pressure; % Coefficient of stiffness
-    ro1 = Ks / (c1^2);
-
-    OriginalArgs = [alfa0, freq0, V_sluoksnio, n, ro2, h, Temperature, Pressure];
-    LB_coeff = -[50, 99, 50, 50, 50, 99, 50, 20]; % [%]
-    UB_coeff = [50, 100, 50, 50, 50, 100, 50, 20]; % [%]
-    acquisition_parameters = [F_sampling, c1, ro1];
-    acquisition_parameters_error = 0; % [%]
-    e_c1 = 0;
-end
 Num_Parame_Error_Levels = length(e_c1);
 
+%% MODEL PARAMETERS
 
+LB = OriginalArgs .* (1 + LB_coeff / 100);
+UB = OriginalArgs .* (1 + UB_coeff / 100);
+
+nfft = 2 ^ nextpow2(length(Reference));
+HalfXcorrLength = floor(nfft / 2);
+nr = (1 : HalfXcorrLength+1) - 1;
+freq_axis(1 : HalfXcorrLength+1) = F_sampling / nfft * nr;
+nr = (HalfXcorrLength+2 : nfft) - (nfft + 1);
+freq_axis(HalfXcorrLength+2 : nfft) = F_sampling / nfft * nr;
+
+Wave_Meas_WithoutNoise = Wave_synthesize(OriginalArgs, Reference, acquisition_parameters, freq_axis);
+
+if (DrawFigures >= 1)
+    %% Plot the generated ultrasound wave
+    figure(figure_num); figure_num = figure_num + 1;
+    plot(Wave_Meas_WithoutNoise,'r');
+    title('Refrence signal without noise');
+    grid
+end
+
+% GaindB = 60;  % [dB]
+% Gain = 10^(GaindB/20);
+Gain = max(Reference) / max(Wave_Meas_WithoutNoise);
+
+
+%% EXPORT: TransferFunction
+
+T = TransferFunction(OriginalArgs, acquisition_parameters, freq_axis);
+% IN
+export_data(OriginalArgs, 'test/TransferFunction/OriginalArgs');
+export_data(acquisition_parameters, 'test/TransferFunction/acquisition_parameters');
+export_data(freq_axis, 'test/TransferFunction/freq_axis');
+% OUT
+export_data(T, 'test/TransferFunction/T');
 
 

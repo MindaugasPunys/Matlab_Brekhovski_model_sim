@@ -21,4 +21,5 @@ Z2 = veloc * ro2; % antro sluoksnio impedansas
 T = (4 * Z1 * Z2) ./ ...
     ( (Z1+Z2).^2 .* exp(-1i*k*h) - (Z1-Z2).^2.*exp(1i*k*h) ); %Brekhovskikh & Godin 1990 (2.4.18)
 T(1) = 0;
+
 end
