@@ -143,4 +143,16 @@ export_data(freq_axis, 'test/TransferFunction/freq_axis');
 % OUT
 export_data(T, 'test/TransferFunction/T');
 
+%% TEST: TransferFunction
 
+dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/TransferFunction_csim.log';
+
+plot_xilinx_data(dir, 'T');
+hold on;
+plot(real(T), '--')
+hold on;
+plot(imag(T), '--')
+
+%%
+
+% HDL coder result?
