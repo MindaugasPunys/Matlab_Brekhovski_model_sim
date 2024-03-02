@@ -1,7 +1,7 @@
 %% SETUP
 clear; close all;
 
-DrawFigures = 1; % 0 - Off; 1 - On; 2 - Draw each iteration results
+DrawFigures = 2; % 0 - Off; 1 - On; 2 - Draw each iteration results
 figure_num = 1;
 
 SaveToFile = 0;
@@ -17,7 +17,7 @@ FixedNoise = 0; % load wave record from loadfile
 % 1 - use Temperature and Pressure (Better results)
 global AirArguments;
 AirArguments = 1;
-TestCycles_New = 5;  % times to repeat aproximation
+TestCycles_New = 3;  % times to repeat aproximation
 
 %% REFRENCE
 % Generates a refrence chirp signal
@@ -264,11 +264,10 @@ for m=1 : Num_Parame_Error_Levels
 
             p(1)=plot(time,Wave_Meas,'b');grid;
             hold on
-            p(2)=plot(time,Wave_Fitted,'r');grid;
+            p(2)=plot(time,Wave_Fitted,'r--');grid;
             legend(p,['Measured';'Fitted  ']);
         end
-
-
+        pause(1);
     end  %  for k=1:TestCycles
 
     MedianWAE(m) = median(WaveApproximError(:,m));

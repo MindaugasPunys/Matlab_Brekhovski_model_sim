@@ -781,3 +781,892 @@ Simulation duration: 1.3234 minutes
 Generate_test_data
 plot(real(k))
 plot(imag(k))
+
+denominator_MSE =
+
+   5.4410e+05
+
+
+T_MSE =
+
+   1.8739e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   9.3875e+06
+
+
+T_MSE =
+
+   4.1605e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   Inf
+
+
+T_MSE =
+
+   3.1007e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   2.9299e+11
+
+
+T_MSE =
+
+   6.6378e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   9.6421e+60
+
+
+T_MSE =
+
+   3.1495e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   5.9700e+06
+
+
+T_MSE =
+
+   5.7033e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   4.0962e+06
+
+
+T_MSE =
+
+   1.4934e-05
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+  9.0684e+283
+
+
+T_MSE =
+
+   3.2354e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   9.6029e+21
+
+
+T_MSE =
+
+   3.9873e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   4.1065e+06
+
+
+T_MSE =
+
+   1.0780e-04
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   4.4514e+06
+
+
+T_MSE =
+
+   5.3005e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   5.6707e+06
+
+
+T_MSE =
+
+   4.5700e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   1.1480e+07
+
+
+T_MSE =
+
+   5.2198e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   3.7626e+06
+
+
+T_MSE =
+
+   3.1752e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   1.7465e+81
+
+
+T_MSE =
+
+   3.2348e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   1.0383e+07
+
+
+T_MSE =
+
+   4.2936e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   5.4505e+06
+
+
+T_MSE =
+
+   6.5786e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   7.4694e+06
+
+
+T_MSE =
+
+   4.2512e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   4.3225e+07
+
+
+T_MSE =
+
+   4.2299e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   2.4977e+06
+
+
+T_MSE =
+
+   5.9364e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   1.2916e+09
+
+
+T_MSE =
+
+   4.2784e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   2.6707e+07
+
+
+T_MSE =
+
+   3.8555e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   6.5916e+06
+
+
+T_MSE =
+
+   4.8633e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   4.5230e+06
+
+
+T_MSE =
+
+   2.7491e-04
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   2.7478e+07
+
+
+T_MSE =
+
+   3.5661e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   7.3771e+07
+
+
+T_MSE =
+
+   4.4995e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   4.1391e+30
+
+
+T_MSE =
+
+   5.6224e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   9.6789e+06
+
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('matlab.graphics.internal.markFigure')" style="font-weight:bold">matlab.graphics.internal.markFigure</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('grid', 'C:\USER_DATA\Matlab\toolbox\matlab\graphics\axis\grid.m', 101)" style="font-weight:bold">grid</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\matlab\graphics\axis\grid.m',101,0)">line 101</a>)
+matlab.graphics.internal.markFigure(ax);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot_xilinx_data', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\plot_xilinx_data.m', 41)" style="font-weight:bold">plot_xilinx_data</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\plot_xilinx_data.m',41,0)">line 41</a>)
+grid on;
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('TransferFunction', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m', 77)" style="font-weight:bold">TransferFunction</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m',77,0)">line 77</a>)
+T_HLS = plot_xilinx_data(dir, 'T');
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Wave_synthesize', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m', 3)" style="font-weight:bold">Wave_synthesize</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m',3,0)">line 3</a>)
+T = TransferFunction(args, params, freq);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Objective_Func', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m', 3)" style="font-weight:bold">Objective_Func</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m',3,0)">line 3</a>)
+model_signal = Wave_synthesize(args, ref_signal, params, f_axis);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 211)" style="font-weight:bold">test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',211,0)">line 211</a>)
+        Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fcnvectorizer', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m', 19)" style="font-weight:bold">fcnvectorizer</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m',19,0)">line 19</a>)
+            y(i,:) = feval(fun,(pop(i,:)));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm>makeState', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 795)" style="font-weight:bold">particleswarm>makeState</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',795,0)">line 795</a>)
+    fvals = fcnvectorizer(state.Positions(2:end,:),objFcn,1,options.SerialUserFcn);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm>pswcore', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 180)" style="font-weight:bold">particleswarm>pswcore</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',180,0)">line 180</a>)
+state = makeState(nvars,lbMatrix,ubMatrix,objFcn,options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 157)" style="font-weight:bold">particleswarm</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',157,0)">line 157</a>)
+[x,fval,exitFlag,output] = pswcore(objFcn,nvars,lbRow,ubRow,output,options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 231)" style="font-weight:bold">test_synthesized</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',231,0)">line 231</a>)
+        FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
+} 
+close all
+test_synthesized
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Objective_Func')" style="font-weight:bold">Objective_Func</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 211)" style="font-weight:bold">test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',211,0)">line 211</a>)
+        Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fcnvectorizer', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m', 19)" style="font-weight:bold">fcnvectorizer</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m',19,0)">line 19</a>)
+            y(i,:) = feval(fun,(pop(i,:)));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm>pswcore', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 375)" style="font-weight:bold">particleswarm>pswcore</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',375,0)">line 375</a>)
+            state.Fvals = fcnvectorizer(state.Positions, objFcn, 1, options.SerialUserFcn);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 157)" style="font-weight:bold">particleswarm</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',157,0)">line 157</a>)
+[x,fval,exitFlag,output] = pswcore(objFcn,nvars,lbRow,ubRow,output,options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 231)" style="font-weight:bold">test_synthesized</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',231,0)">line 231</a>)
+        FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
+} 
+test_synthesized
+Test no. 1. Wave Approximation Error =-137.1553 dB
+Test no. 2. Wave Approximation Error =-263.4227 dB
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Objective_Func')" style="font-weight:bold">Objective_Func</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 211)" style="font-weight:bold">test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',211,0)">line 211</a>)
+        Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fcnvectorizer', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m', 19)" style="font-weight:bold">fcnvectorizer</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m',19,0)">line 19</a>)
+            y(i,:) = feval(fun,(pop(i,:)));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm>pswcore', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 375)" style="font-weight:bold">particleswarm>pswcore</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',375,0)">line 375</a>)
+            state.Fvals = fcnvectorizer(state.Positions, objFcn, 1, options.SerialUserFcn);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 157)" style="font-weight:bold">particleswarm</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',157,0)">line 157</a>)
+[x,fval,exitFlag,output] = pswcore(objFcn,nvars,lbRow,ubRow,output,options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 231)" style="font-weight:bold">test_synthesized</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',231,0)">line 231</a>)
+        FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
+} 
+test_synthesized
+Test no. 1. Wave Approximation Error =-266.9831 dB
+Test no. 2. Wave Approximation Error =-245.9531 dB
+Test no. 3. Wave Approximation Error =-261.6484 dB
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('TransferFunction')" style="font-weight:bold">TransferFunction</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Wave_synthesize', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m', 3)" style="font-weight:bold">Wave_synthesize</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m',3,0)">line 3</a>)
+T = TransferFunction(args, params, freq);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Objective_Func', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m', 3)" style="font-weight:bold">Objective_Func</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m',3,0)">line 3</a>)
+model_signal = Wave_synthesize(args, ref_signal, params, f_axis);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 211)" style="font-weight:bold">test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',211,0)">line 211</a>)
+        Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fcnvectorizer', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m', 19)" style="font-weight:bold">fcnvectorizer</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m',19,0)">line 19</a>)
+            y(i,:) = feval(fun,(pop(i,:)));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm>pswcore', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 375)" style="font-weight:bold">particleswarm>pswcore</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',375,0)">line 375</a>)
+            state.Fvals = fcnvectorizer(state.Positions, objFcn, 1, options.SerialUserFcn);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 157)" style="font-weight:bold">particleswarm</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',157,0)">line 157</a>)
+[x,fval,exitFlag,output] = pswcore(objFcn,nvars,lbRow,ubRow,output,options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 231)" style="font-weight:bold">test_synthesized</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',231,0)">line 231</a>)
+        FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
+} 
+test_synthesized
+Test no. 1. Wave Approximation Error =-273.5127 dB
+Test no. 2. Wave Approximation Error =-226.4189 dB
+Test no. 3. Wave Approximation Error =-207.018 dB
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Objective_Func')" style="font-weight:bold">Objective_Func</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 211)" style="font-weight:bold">test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',211,0)">line 211</a>)
+        Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fcnvectorizer', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m', 19)" style="font-weight:bold">fcnvectorizer</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m',19,0)">line 19</a>)
+            y(i,:) = feval(fun,(pop(i,:)));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm>pswcore', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 375)" style="font-weight:bold">particleswarm>pswcore</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',375,0)">line 375</a>)
+            state.Fvals = fcnvectorizer(state.Positions, objFcn, 1, options.SerialUserFcn);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 157)" style="font-weight:bold">particleswarm</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',157,0)">line 157</a>)
+[x,fval,exitFlag,output] = pswcore(objFcn,nvars,lbRow,ubRow,output,options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 231)" style="font-weight:bold">test_synthesized</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',231,0)">line 231</a>)
+        FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
+} 
+test_synthesized
+Test no. 1. Wave Approximation Error =-216.5038 dB
+Test no. 2. Wave Approximation Error =-247.2718 dB
+Test no. 3. Wave Approximation Error =-207.6171 dB
+Test no. 4. Wave Approximation Error =-267.324 dB
+Test no. 5. Wave Approximation Error =-202.1051 dB
+============ m=1 ============================
+Median of Approximation Error=-216.5038 dB
+Median of Approximation Error Noisy=-216.5038 dB
+Percentage of strange records 0 %
+======================================================
+Simulation duration: 1.6904 minutes
+test_synthesized
+Test no. 1. Wave Approximation Error =-11.192 dB
+Strange record found. Total strange records 1
+Test no. 2. Wave Approximation Error =-271.1415 dB
+{Operation terminated by user during <a href="matlab:matlab.internal.language.introspective.errorDocCallback('TransferFunction')" style="font-weight:bold">TransferFunction</a>
+
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Wave_synthesize', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m', 3)" style="font-weight:bold">Wave_synthesize</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m',3,0)">line 3</a>)
+T = TransferFunction(args, params, freq);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Objective_Func', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m', 3)" style="font-weight:bold">Objective_Func</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m',3,0)">line 3</a>)
+model_signal = Wave_synthesize(args, ref_signal, params, f_axis);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 211)" style="font-weight:bold">test_synthesized>@(func_args)Objective_Func(func_args,Reference,Wave_Meas,acq_parameters_shifted(m,:),freq_axis)</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',211,0)">line 211</a>)
+        Objective_Function = @(func_args) Objective_Func(func_args, Reference, ...
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('fcnvectorizer', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m', 19)" style="font-weight:bold">fcnvectorizer</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\private\fcnvectorizer.m',19,0)">line 19</a>)
+            y(i,:) = feval(fun,(pop(i,:)));
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm>pswcore', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 375)" style="font-weight:bold">particleswarm>pswcore</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',375,0)">line 375</a>)
+            state.Fvals = fcnvectorizer(state.Positions, objFcn, 1, options.SerialUserFcn);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('particleswarm', 'C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m', 157)" style="font-weight:bold">particleswarm</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\globaloptim\globaloptim\particleswarm.m',157,0)">line 157</a>)
+[x,fval,exitFlag,output] = pswcore(objFcn,nvars,lbRow,ubRow,output,options);
+
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('test_synthesized', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m', 231)" style="font-weight:bold">test_synthesized</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\test_synthesized.m',231,0)">line 231</a>)
+        FittedArgs(k,:) = particleswarm(Objective_Function, nvariables, LB, UB, options); %#ok<*SAGROW>
+} 
+test_synthesized
+Test no. 1. Wave Approximation Error =-204.0753 dB
+Test no. 2. Wave Approximation Error =-259.95 dB
+Test no. 3. Wave Approximation Error =-132.6094 dB
+============ m=1 ============================
+Median of Approximation Error=-204.0753 dB
+Median of Approximation Error Noisy=-204.0753 dB
+Percentage of strange records 0 %
+======================================================
+Simulation duration: 1.0304 minutes
+Generate_test_data
+Generate_test_data
+
+denominator_MSE =
+
+   5.4410e+05
+
+
+T_MSE =
+
+   1.8739e-06
+
+difference!---------------------------------------------------
+
+denominator_MSE =
+
+   5.4410e+05
+
+
+T_MSE =
+
+   1.8739e-06
+
+difference!---------------------------------------------------
+Generate_test_data
+
+denominator_MSE =
+
+   5.4410e+05
+
+
+T_MSE =
+
+   1.8739e-06
+
+
+denominator_MSE =
+
+   5.4410e+05
+
+
+T_MSE =
+
+   1.8739e-06
+
+close all
+Generate_test_data
+
+denominator_MSE =
+
+   5.4417e+05
+
+
+T_MSE =
+
+   4.8820e-07
+
+
+denominator_MSE =
+
+   5.4417e+05
+
+
+T_MSE =
+
+   4.8820e-07
+
+close all
+Generate_test_data
+
+denominator_MSE =
+
+   5.4417e+05
+
+
+T_MSE =
+
+   4.8820e-07
+
+
+denominator_MSE =
+
+   5.4417e+05
+
+
+T_MSE =
+
+   4.8820e-07
+
+Generate_test_data
+{Unrecognized function or variable 'denominator_HLS'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('TransferFunction', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m', 63)" style="font-weight:bold">TransferFunction</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m',63,0)">line 63</a>)
+    denominator_MSE = mean(abs(denominator_HLS - denominator(2:end)).^2)
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Wave_synthesize', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m', 3)" style="font-weight:bold">Wave_synthesize</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m',3,0)">line 3</a>)
+T = TransferFunction(args, params, freq);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Generate_test_data', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m', 121)" style="font-weight:bold">Generate_test_data</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m',121,0)">line 121</a>)
+Wave_Meas_WithoutNoise = Wave_synthesize(OriginalArgs, Reference, acquisition_parameters, freq_axis);
+} 
+opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m',63,0)
+Generate_test_data
+
+cos_kh_MSE =
+
+    0.2548
+
+
+cos_kh_MSE =
+
+    0.2524
+
+
+denominator_MSE =
+
+   4.8648e+24
+
+
+T_MSE =
+
+   4.8820e-07
+
+
+cos_kh_MSE =
+
+    0.2548
+
+
+cos_kh_MSE =
+
+    0.2524
+
+
+denominator_MSE =
+
+   4.8648e+24
+
+
+T_MSE =
+
+   4.8820e-07
+
+Generate_test_data
+
+cos_kh_MSE =
+
+    0.2548
+
+
+cos_kh_MSE =
+
+    0.2524
+
+
+denominator_MSE =
+
+   4.8648e+24
+
+
+T_MSE =
+
+   4.8820e-07
+
+[Warning: Error updating Text.
+
+ String scalar or character vector must have valid interpreter syntax:
+sin\(kh\)
+] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('defaulterrorcallback', 'C:\USER_DATA\Matlab\toolbox\matlab\graphics\objectsystem\defaulterrorcallback.m', 12)" style="font-weight:bold">defaulterrorcallback</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\matlab\graphics\objectsystem\defaulterrorcallback.m',12,0)">line 12</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Generate_test_data', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m', 125)" style="font-weight:bold">Generate_test_data</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m',125,0)">line 125</a>)] 
+[Warning: Error updating Text.
+
+ String scalar or character vector must have valid interpreter syntax:
+cos\(kh\)
+] 
+[> In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('defaulterrorcallback', 'C:\USER_DATA\Matlab\toolbox\matlab\graphics\objectsystem\defaulterrorcallback.m', 12)" style="font-weight:bold">defaulterrorcallback</a> (<a href="matlab: opentoline('C:\USER_DATA\Matlab\toolbox\matlab\graphics\objectsystem\defaulterrorcallback.m',12,0)">line 12</a>)
+In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Generate_test_data', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m', 125)" style="font-weight:bold">Generate_test_data</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m',125,0)">line 125</a>)] 
+
+cos_kh_MSE =
+
+    0.2548
+
+
+cos_kh_MSE =
+
+    0.2524
+
+
+denominator_MSE =
+
+   4.8648e+24
+
+
+T_MSE =
+
+   4.8820e-07
+
+[Warning: Error updating Text.
+
+ String scalar or character vector must have valid interpreter syntax:
+cos\(kh\)
+] 
+[Warning: Error updating Text.
+
+ String scalar or character vector must have valid interpreter syntax:
+sin\(kh\)
+] 
+Generate_test_data
+
+cos_kh_MSE =
+
+    0.2548
+
+
+cos_kh_MSE =
+
+    0.2524
+
+{Unrecognized function or variable 'legen'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('TransferFunction', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m', 72)" style="font-weight:bold">TransferFunction</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m',72,0)">line 72</a>)
+    title('sin/(kh/)'); legen('HLS re', 'HLS im', 'Matlab re', 'Matlab im');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Wave_synthesize', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m', 3)" style="font-weight:bold">Wave_synthesize</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m',3,0)">line 3</a>)
+T = TransferFunction(args, params, freq);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Generate_test_data', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m', 121)" style="font-weight:bold">Generate_test_data</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m',121,0)">line 121</a>)
+Wave_Meas_WithoutNoise = Wave_synthesize(OriginalArgs, Reference, acquisition_parameters, freq_axis);
+} 
+Generate_test_data
+
+cos_kh_MSE =
+
+    0.2548
+
+
+cos_kh_MSE =
+
+    0.2524
+
+{Unrecognized function or variable 'legen'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('TransferFunction', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m', 72)" style="font-weight:bold">TransferFunction</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m',72,0)">line 72</a>)
+    title('sin%(kh%)'); legen('HLS re', 'HLS im', 'Matlab re', 'Matlab im');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Wave_synthesize', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m', 3)" style="font-weight:bold">Wave_synthesize</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m',3,0)">line 3</a>)
+T = TransferFunction(args, params, freq);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Generate_test_data', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m', 121)" style="font-weight:bold">Generate_test_data</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m',121,0)">line 121</a>)
+Wave_Meas_WithoutNoise = Wave_synthesize(OriginalArgs, Reference, acquisition_parameters, freq_axis);
+} 
+Generate_test_data
+
+cos_kh_MSE =
+
+    0.2548
+
+
+cos_kh_MSE =
+
+    0.2524
+
+{Unrecognized function or variable 'legen'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('TransferFunction', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m', 72)" style="font-weight:bold">TransferFunction</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\TransferFunction.m',72,0)">line 72</a>)
+    title('sin(kh)'); legen('HLS re', 'HLS im', 'Matlab re', 'Matlab im');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Wave_synthesize', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m', 3)" style="font-weight:bold">Wave_synthesize</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Wave_synthesize.m',3,0)">line 3</a>)
+T = TransferFunction(args, params, freq);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('Generate_test_data', 'D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m', 121)" style="font-weight:bold">Generate_test_data</a> (<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Generate_test_data.m',121,0)">line 121</a>)
+Wave_Meas_WithoutNoise = Wave_synthesize(OriginalArgs, Reference, acquisition_parameters, freq_axis);
+} 
+Generate_test_data
+
+cos_kh_MSE =
+
+    0.2548
+
+
+cos_kh_MSE =
+
+    0.2524
+
+
+denominator_MSE =
+
+   4.8648e+24
+
+
+T_MSE =
+
+   4.8820e-07
+
+
+cos_kh_MSE =
+
+    0.2548
+
+
+cos_kh_MSE =
+
+    0.2524
+
+
+denominator_MSE =
+
+   4.8648e+24
+
+
+T_MSE =
+
+   4.8820e-07
+
+Generate_test_data
+
+cos_kh_MSE =
+
+    0.2548
+
+
+sin_kh_MSE =
+
+    0.2524
+
+
+denominator_MSE =
+
+   4.8648e+24
+
+
+T_MSE =
+
+   4.8820e-07
+
+
+cos_kh_MSE =
+
+    0.2548
+
+
+sin_kh_MSE =
+
+    0.2524
+
+
+denominator_MSE =
+
+   4.8648e+24
+
+
+T_MSE =
+
+   4.8820e-07
+
+Generate_test_data
+
+cos_kh_MSE =
+
+    0.2548
+
+
+sin_kh_MSE =
+
+    0.2524
+
+
+denominator_MSE =
+
+   4.8648e+24
+
+
+denominator_STD =
+
+   6.3200e+24
+
+
+T_MSE =
+
+   4.8820e-07
+
+
+cos_kh_MSE =
+
+    0.2548
+
+
+sin_kh_MSE =
+
+    0.2524
+
+
+denominator_MSE =
+
+   4.8648e+24
+
+
+denominator_STD =
+
+   6.3200e+24
+
+
+T_MSE =
+
+   4.8820e-07
+
+doc std
+doc mean
+doc mse
