@@ -134,7 +134,6 @@ Gain = max(Reference) / max(Wave_Meas_WithoutNoise);
 
 
 %% EXPORT: TransferFunction
-
 T = TransferFunction(OriginalArgs, acquisition_parameters, freq_axis);
 % IN
 export_data(OriginalArgs, 'test/TransferFunction/OriginalArgs');
@@ -153,6 +152,44 @@ plot(real(T), '--')
 hold on;
 plot(imag(T), '--')
 
-%%
+%% TEST: FFT wrapper module
 
+FFT_TEST = 0
+if FFT_TEST
+    clear; close all;
+    dir_fft = 'C:/GIT/VITIS/FFT_TEST/solution1/csim/report/FFT_call_csim.log';
+
+    fft_input = plot_xilinx_data(dir_fft, 'fft_input'); xlim([0 100]);
+    
+    fft_output = plot_xilinx_data(dir_fft, 'fft_output');
+    matlab_fft = fft(fft_input);
+    hold on; plot(real(matlab_fft), '--');
+    hold on; plot(imag(matlab_fft), '--');
+    legend('HLS re','HLS im','M re','M im')
+
+    ifft_output = plot_xilinx_data(dir_fft, 'ifft_output'); xlim([0 100]);
+
+    figure;
+    plot(fft_input);
+    hold on;
+    plot(ifft_output, '--');
+    legend('fft input', 'ifft output'); xlim([0 100]);
+end
+
+%% EXPORT: WaveSynthesize
+Wave = Wave_synthesize(OriginalArgs, Reference, acquisition_parameters, freq_axis);
+% IN
+export_data(Reference, 'test/TransferFunction/Reference');
+% OUT
+export_data(Wave, 'test/TransferFunction/Wave');
+
+%% TEST: WaveSynthesize
+
+plot_xilinx_data(dir, 'wave_out');
+hold on;
+plot(Wave, '--')
+title('Wave'); legend('HLS', 'Matlab');
+xlabel('Indeksas'); ylabel('Amplitudė');
+
+%%
 % HDL coder result?

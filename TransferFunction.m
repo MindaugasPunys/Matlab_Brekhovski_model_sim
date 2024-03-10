@@ -1,5 +1,5 @@
 function T = TransferFunction(args, params, freq)
-DEBUG = 1;
+DEBUG = 0;
 % fsampl = params(1);
 c1 = params(2);
 ro1 = params(3);
@@ -49,7 +49,7 @@ if DEBUG
     T_a(1) = 0;
     T_b(1) = 0;
 
-    %% TESTING
+    %% TEST
     dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/TransferFunction_csim.log';
 
     cos_kh_HLS = plot_xilinx_data(dir, 'cos_kh');
@@ -84,11 +84,13 @@ if DEBUG
 
     T_HLS = plot_xilinx_data(dir, 'T');
     T_HLS = T_HLS(:,1)' + 1i * T_HLS(:,2)';
-    hold on;
-    plot(real(T), '--')
-    hold on;
-    plot(imag(T), '--')
     T_MSE = mean(abs(T_HLS - T(2:end)).^2)
+    hold on;
+    plot(real(T), '--');
+    hold on;
+    plot(imag(T), '--');
+    title('T koeficientai'); legend('HLS re', 'HLS im', 'Matlab re', 'Matlab im');
+    xlabel('Indeksas'); ylabel('Amplitudė');
 
     if ( max(real(T) - real(T_a)) > 0.001 || max(imag(T) - imag(T_a)) > 0.001 )
         disp("difference!---------------------------------------------------");
