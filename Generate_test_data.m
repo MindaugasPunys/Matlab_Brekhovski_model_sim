@@ -145,12 +145,15 @@ export_data(T, 'test/TransferFunction/T');
 %% TEST: TransferFunction
 
 dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/TransferFunction_csim.log';
+% dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/WaveSynthesis_csim.log';
 
 plot_xilinx_data(dir, 'T');
 hold on;
 plot(real(T), '--')
 hold on;
 plot(imag(T), '--')
+title('T koeficientai'); legend('HLS', 'Matlab');
+xlabel('Indeksas'); ylabel('Amplitudė');
 
 %% TEST: FFT wrapper module
 

@@ -50,7 +50,8 @@ if DEBUG
     T_b(1) = 0;
 
     %% TEST
-    dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/TransferFunction_csim.log';
+    % dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/TransferFunction_csim.log';
+    dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/WaveSynthesis_csim.log';
 
     cos_kh_HLS = plot_xilinx_data(dir, 'cos_kh');
     cos_kh_HLS = cos_kh_HLS(:,1)' + 1i * cos_kh_HLS(:,2)';
