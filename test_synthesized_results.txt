@@ -1670,3 +1670,61 @@ T_MSE =
 doc std
 doc mean
 doc mse
+Test no. 1. Wave Approximation Error =-235.3683 dB
+Test no. 2. Wave Approximation Error =-279.0591 dB
+Test no. 3. Wave Approximation Error =-235.4307 dB
+============ m=1 ============================
+Median of Approximation Error=-235.4307 dB
+Median of Approximation Error Noisy=-235.4307 dB
+Percentage of strange records 0 %
+======================================================
+Simulation duration: 0.70653 minutes
+sum((model_signal - meas_signal) .^ 2)
+
+ans =
+
+   1.4280e+04
+
+sum(meas_signal .^ 2)
+
+ans =
+
+  203.8913
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+<a href="matlab: opentoline('D:\Magistras\Magistro projektas\Matlab_realization\Raw\Objective_Func.m',4,1)">4   </a>error = sum((model_signal - meas_signal) .^ 2) / sum(meas_signal .^ 2);
+plot(model_signal)
+sum((model_signal - meas_signal) .^ 2)
+
+ans =
+
+   1.4280e+04
+
+sum(meas_signal .^ 2)
+
+ans =
+
+  203.8913
+
+if system_dependent('IsDebugMode')==1, dbcont; end
+plot(model_signal)
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+plot(model_signal)
+plotmeas_signal)
+ plotmeas_signal)
+                ↑
+{Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for mismatched delimiters.
+} 
+plot(meas_signal)
+plot(model_signal)
+if system_dependent('IsDebugMode')==1, dbquit; end
+sum(meas_signal .^ 2)
+
+ans =
+
+  203.8913
+
+plot(meas_signal)
+if system_dependent('IsDebugMode')==1, dbquit; end
