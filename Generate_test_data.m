@@ -18,8 +18,8 @@ TestCycles_New = 5;  % times to repeat aproximation
 
 %% REFRENCE
 % Generates a refrence chirp signal
-N_points = 1024 * 2;
-F_sampling = 10e6;
+N_points = 2048; % 2048
+F_sampling = 10e6; % 10e6
 T_sampling = 1 / F_sampling;
 Magnitude = 1000;
 
@@ -144,8 +144,9 @@ export_data(T, 'test/TransferFunction/T');
 
 %% TEST: TransferFunction
 
-dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/TransferFunction_csim.log';
+% dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/TransferFunction_csim.log';
 % dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/WaveSynthesis_csim.log';
+dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/pso_process_csim.log';
 
 plot_xilinx_data(dir, 'T');
 hold on;

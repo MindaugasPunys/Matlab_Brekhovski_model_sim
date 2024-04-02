@@ -18,7 +18,8 @@ Wave = real(ifft(RespSpectrum)); % >>> IFFT <<<
 %% TEST
 if DEBUG
     % dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/TransferFunction_csim.log';
-    dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/WaveSynthesis_csim.log';
+    % dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/WaveSynthesis_csim.log';
+    dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/pso_process_csim.log';
 
     % input_fft_hls = plot_xilinx_data(dir, 'input_fft');
     % hold on;
@@ -35,24 +36,6 @@ if DEBUG
     % plot(imag(conj(T)), '--')
     % title('T conj'); legend('HLS re', 'HLS im', 'M re', 'M im');
     % xlabel('Indeksas'); ylabel('Amplitudė');
-
-    plot_xilinx_data(dir, 'exp_arg_step_1');
-    hold on;
-    plot(freq * h, '--');
-    title('exp_arg_step_1'); legend('HLS re', 'M re');
-    xlabel('Indeksas'); ylabel('Amplitudė');
-
-    plot_xilinx_data(dir, 'exp_arg_step_2');
-    hold on;
-    plot(freq / c1 * h, '--');
-    title('exp_arg_step_2'); legend('HLS re', 'M re');
-    xlabel('Indeksas'); ylabel('Amplitudė');
-
-    plot_xilinx_data(dir, 'exp_arg_step_3');
-    hold on;
-    plot(2 * pi * freq / c1 * h, '--');
-    title('exp_arg_step_3'); legend('HLS re', 'M re');
-    xlabel('Indeksas'); ylabel('Amplitudė');
 
     plot_xilinx_data(dir, 'exp_arg');
     hold on;
