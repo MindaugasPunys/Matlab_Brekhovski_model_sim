@@ -18,8 +18,8 @@ TestCycles_New = 5;  % times to repeat aproximation
 
 %% REFRENCE
 % Generates a refrence chirp signal
-N_points = 2048; % 2048
-F_sampling = 10e6; % 10e6
+N_points = 1024; % 2048
+F_sampling = 4e6; % 10e6
 T_sampling = 1 / F_sampling;
 Magnitude = 1000;
 
@@ -133,21 +133,31 @@ end
 Gain = max(Reference) / max(Wave_Meas_WithoutNoise);
 
 
-%% EXPORT: TransferFunction
+%% EXPORT DATA
+
 T = TransferFunction(OriginalArgs, acquisition_parameters, freq_axis);
+Wave = Wave_synthesize(OriginalArgs, Reference, acquisition_parameters, freq_axis);
 % IN
 export_data(OriginalArgs, 'test/TransferFunction/OriginalArgs');
 export_data(acquisition_parameters, 'test/TransferFunction/acquisition_parameters');
 export_data(freq_axis, 'test/TransferFunction/freq_axis');
+export_data(Reference, 'test/TransferFunction/Reference');
+export_data(Wave_Meas_WithoutNoise, 'test/TransferFunction/Measured');
 % OUT
 export_data(T, 'test/TransferFunction/T');
+export_data(Wave, 'test/TransferFunction/Wave');
 
-%% TEST: TransferFunction
+% COPY TEST DATA TO WSL
+system('cpy_win_to_wsl.bat');
+
+%% TEST
 
 % dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/TransferFunction_csim.log';
 % dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/WaveSynthesis_csim.log';
-dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/pso_process_csim.log';
+% dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/pso_process_csim.log';
+dir = '//wsl.localhost/Ubuntu/home/user/projects/pso_model/log.txt';
 
+% TransferFunction
 plot_xilinx_data(dir, 'T');
 hold on;
 plot(real(T), '--')
@@ -156,8 +166,7 @@ plot(imag(T), '--')
 title('T koeficientai'); legend('HLS', 'Matlab');
 xlabel('Indeksas'); ylabel('Amplitudė');
 
-%% TEST: FFT wrapper module
-
+%FFT wrapper module
 FFT_TEST = 0
 if FFT_TEST
     clear; close all;
@@ -180,20 +189,20 @@ if FFT_TEST
     legend('fft input', 'ifft output'); xlim([0 100]);
 end
 
-%% EXPORT: WaveSynthesize
-Wave = Wave_synthesize(OriginalArgs, Reference, acquisition_parameters, freq_axis);
-% IN
-export_data(Reference, 'test/TransferFunction/Reference');
-% OUT
-export_data(Wave, 'test/TransferFunction/Wave');
-
-%% TEST: WaveSynthesize
-
+% WaveSynthesize
 plot_xilinx_data(dir, 'wave_out');
 hold on;
 plot(Wave, '--')
 title('Wave'); legend('HLS', 'Matlab');
 xlabel('Indeksas'); ylabel('Amplitudė');
+
+% PSO
+hls_args = plot_xilinx_data(dir, 'hls_args');
+hls_wave = Wave_synthesize(hls_args, Reference, acquisition_parameters, freq_axis);
+figure;
+plot(hls_wave, '-')
+hold on;
+plot(Wave_Meas_WithoutNoise, '--')
 
 %%
 % HDL coder result?
