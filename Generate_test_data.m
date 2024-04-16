@@ -203,6 +203,16 @@ figure;
 plot(hls_wave, '-')
 hold on;
 plot(Wave_Meas_WithoutNoise, '--')
+title('PSO rezultatai'); legend('HLS', 'Matlab');
+xlabel('Indeksas'); ylabel('Amplitudė');
+
+disp("Tikrieji argumentai:");
+disp(OriginalArgs);
+disp("PSO nustatyti argumentai:");
+disp(hls_args');
+disp("Argumentų paklaida, %:");
+pso_error = abs(OriginalArgs - hls_args') ./ OriginalArgs .* 100;
+disp(pso_error);
 
 %%
 % HDL coder result?

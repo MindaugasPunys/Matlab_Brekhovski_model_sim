@@ -1728,3 +1728,26 @@ ans =
 
 plot(meas_signal)
 if system_dependent('IsDebugMode')==1, dbquit; end
+sum(meas_signal .^ 2)
+
+ans =
+
+  203.8913
+
+if system_dependent('IsDebugMode')==1, dbquit all; end
+test_synthesized
+sum(meas_signal .^ 2)
+
+ans =
+
+  241.6017
+
+if system_dependent('IsDebugMode')==1, dbquit all; end
+test_synthesized
+sum(meas_signal .^ 2)
+
+ans =
+
+   86.4637
+
+if system_dependent('IsDebugMode')==1, dbquit; end
