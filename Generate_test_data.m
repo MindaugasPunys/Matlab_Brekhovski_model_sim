@@ -154,17 +154,19 @@ system('cpy_win_to_wsl.bat');
 
 % dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/TransferFunction_csim.log';
 % dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/WaveSynthesis_csim.log';
-% dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/pso_process_csim.log';
-dir = '//wsl.localhost/Ubuntu/home/user/projects/pso_model/log.txt';
+dir = 'C:/GIT/VITIS/Model_sim/solution/csim/report/pso_process_csim.log';
+% dir = '//wsl.localhost/Ubuntu/home/user/projects/pso_model/log.txt';
 
 % TransferFunction
-plot_xilinx_data(dir, 'T');
-hold on;
-plot(real(T), '--')
-hold on;
-plot(imag(T), '--')
-title('T koeficientai'); legend('HLS', 'Matlab');
-xlabel('Indeksas'); ylabel('Amplitudė');
+T_HLS = plot_xilinx_data(dir, 'T');
+T_HLS = T_HLS(:,1)' + 1i * T_HLS(:,2)';
+[freq_plot, T_HLS] = plot_with_freq(freq_axis, T_HLS);
+[~, T] = plot_with_freq(freq_axis, T);
+plot(freq_plot / 1e6, real(T_HLS), freq_plot / 1e6, imag(T_HLS), ...
+     freq_plot / 1e6, real(T), '--', freq_plot / 1e6, imag(T), '--');
+title('Perdavimo funkcija'); legend('HLS re', 'HLS im', 'Matlab re', 'Matlab im');
+xlabel('Argumentas, MHz'); ylabel('Amplitudė');
+grid on;
 
 %FFT wrapper module
 FFT_TEST = 0
